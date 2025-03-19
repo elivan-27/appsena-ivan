@@ -12,6 +12,8 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git pkg-config libgmp-dev curl libjemalloc2 libvips sqlite3 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+RUN gem install bundler -v '~> 2.6.6'
+
 # Definir entorno de desarrollo
 ENV RAILS_ENV="development" \
     BUNDLE_PATH="/usr/local/bundle" \
